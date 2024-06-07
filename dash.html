@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="app.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exit game website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <script>
+    if (document.cookie.indexOf('auth=true') === -1) {
+        window.location.href = 'password.html';
+    }
+  </script>
+  <div class="title">Smart Express Boardcomputer</div>
+    <div class="row">
+        <div class="column">Geschwindigkeit in km/h
+          <div class="card" id="speed">354</div>
+        </div>
+        <div class="column">Nächster Halt in km
+          <div class="card" id="range">300</div>
+        </div>
+        <div class="column">Nächste Haltestelle
+          <div class="card2">Nordbahnhof (Endhaltestelle)</div>
+        </div>
+        <div class="column">Steuerungselemente
+          <div id="türContainer">
+            <div id="tür1">1<img src="" alt="" style="width:50px;height:33px;"></div>
+            <div id="tür2">2<img src="" alt="" style="width:50px;height:33px;"></div>
+            <div id="tür3">E<img src="" alt="" style="width:50px;height:33px;"></div>
+            <script>
+              insertImages();
+            </script>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="alarm" id="alarmWindow">AI CRASHED! GEHE ZUM COCKPIT UND DRÜCKE DEN EMERGENCY BUTTON</div>
+      <div class="gameOverWindow" id="gameOverWindow">
+        <div class="gameOverWindowContent">
+          <p>❌ Fatal Error: Train collision detected!</p>
+            <p>Einige Teile von Smart Express reagieren nicht. Es wurde eine Kollision in den folgenden Teilen Ihres Smart Express festgestellt: Vorderseite, Mitte, Rückseite.</p>
+            <p>GAME OVER</p>
+        </div>
+      </div>
+      </div>
+      <div class="Window" id="tutorialWindow">
+        <span class="close" id="closeHelpWindow" onclick="closeWindow('tutorialWindow')">&times;</span>
+        <div class="WindowContent">
+          <p>Anleitung zur Wiederherstellung des Stromflusses an Tür 2</p>
+            <p>
+              Du schaust richtig auf den Stromkasten, wenn die kleine rote LED dich anleuchtet.<br>
+              Die Kabel, die bereits eingesteckt sind, sind richtig und dürfen nicht ausgesteckt werden.<br>
+              Die gelbe LED repräsentiert den Stromfluss der Tür. Wenn diese an ist, kann die Tür geöffnet werden.<br>
+              Hinten rechts am Stromkasten befinden sich zwei Kabel (rot und blau), die sinnvoll nach vorne rechts angeschlossen werden sollten.<br>
+              Die zwei Reihen vorne: Die Reihe, die mit Minus markiert ist, stellt Ground dar, und die Reihe, die mit Plus markiert ist, stellt 5 Volt dar.<br>
+              Die LED hat eine Anode (Reihe 5) und eine Kathode (Reihe 6).<br>
+              Ein Widerstand (bestehend aus einem blaufarbenen Zylinder, aus dem zwei flexible Drähte ragen) muss die Ground-Reihe mit der Kathode verbinden.<br>
+              Die Anode muss mit einem Kabel an die 5V-Reihe angeschlossen sein.<br>
+              Wenn dies alles erfüllt ist, leuchtet die gelbe LED und der Strom der Tür ist an.
+              </p>
+        </div>
+      </div>
+      <div class="Window" id="gameWonWindow">
+        <span class="close" id="closeHelpWindow" onclick="closeWindow('gameWonWindow'); resetDash();">&times;</span>
+        <div class="WindowContent">
+          <p>🆘 EMERGENCY!</p>
+            <p>Der Emergency Knopf wurde gedrückt. Dadurch wurde der Zug automatisch gestoppt. Ihre Smart Express AI wird neu gestartet und muss von einem Admin aktiviert werden.</p>
+            <p>Exit Game gewonnen!</p>
+        </div>
+      </div>
+      <div class="Window" id="hinweisWindow">
+        <span class="close" id="closeHelpWindow" onclick="closeWindow('hinweisWindow');">&times;</span>
+        <div class="WindowContent">
+          <p>Hinweis</p>
+            <p>Finde die Karte, um den Strom der Türe wieder zu reparieren.</p>
+        </div>
+      </div>
+  </div>
+    
+</body>
+</html>

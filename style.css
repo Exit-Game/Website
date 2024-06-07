@@ -1,0 +1,317 @@
+
+:root {
+    --backgroundColor: #0b0f15;
+    --cardBackgroundcolour: #161f29;
+    --lila: #602dd3;
+}
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial;
+    text-align: center;
+    color: white;
+    background-color: var(--backgroundColor);
+  }
+  .column {
+    margin-top: 50px;
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  .row {margin: 0 -5px;}
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .title {
+    margin-top: 4%;
+  }
+  
+  .card {
+    /* Schriftart */
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 300%;
+    /* Box  */
+    border-radius: 12px;
+    margin-top: 10px;
+    padding: 5px;
+    text-align: center;
+    background-color: var(--lila);
+    border: 1px solid transparent;
+  }
+  .card2 {
+    /* Schriftart */
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 100%;
+    /* Box */
+    border-radius: 12px;
+    margin-top: 10px;
+    padding: 23px;
+    text-align: center;
+    background-color: var(--cardBackgroundcolour);
+    border: 1px solid transparent;
+  }
+  .card3 {
+    display: flex;
+    justify-content: space-around;
+    border-radius: 12px;
+    margin-top: 10px;
+    padding: 14px;
+    text-align: center;
+    background-color: var(--cardBackgroundcolour);
+    border: 1px solid transparent;
+  }
+  .card:hover, .card2:hover, .card3:hover, #türContainer:hover, .Window:hover {
+    border-color: grey;
+  }
+
+  #türContainer {
+    display: flex;
+    justify-content: space-around;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+    border-radius: 12px;
+    margin-top: 10px;
+    padding: 14px;
+    text-align: center;
+    background-color: var(--cardBackgroundcolour);
+    border: 1px solid transparent;
+  }
+  .title {
+    font-family: Arial Bold, Helvetica Bold, sans-serif Bold;
+    color: white;
+    font-size: 400%;
+  }
+  .form-container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    width: 100 0px;
+    padding: 10px;
+    height: 100vh;
+    margin-bottom: 140px;
+  }
+
+  #hinweisWindow {
+    display: none;
+    margin-top: 15%;
+    height: 35%;
+  }
+
+  .button, .button1 {
+  background-color: var(--cardBackgroundcolour);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  }
+  #pwd {
+    margin-right: 2mm;
+    margin-left: 2mm;
+  }
+  #fgpw {
+    margin-right: 1mm;
+    margin-left: 1mm;
+  }
+  #fgpw:hover {
+    background-color: grey;
+  }
+  .form-container input[type="submit"]:hover {
+    background-color: grey;
+  }
+
+.Window {
+  font-size: 150%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 70%;
+  height: 50%;
+  padding-right: 1%;
+  padding-top: 0.5%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 9%;
+  overflow: auto;
+  background-color: var(--cardBackgroundcolour);
+  border-radius: 20px;
+  border: 1px solid transparent;
+}
+#helpWindow {
+  width: 70%;
+  height: 70%;
+}
+.HelpWindowContent {
+  padding: 5%;
+
+}
+#tutorialWindow {
+  width: 70%;
+  height: 80%;
+  margin-top: 5%;
+
+}
+.WindowContent {
+  text-align: center;
+  align-items: center;
+  padding-top: 3%;
+  padding: 6%;
+}
+#helpWindow, #tutorialWindow, #gameWonWindow {
+display: none;
+}
+
+.close {
+  color: white;
+  float: inline-end;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(155, 155, 155);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.gameOverWindow {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 70%;
+  height: 50%;
+  padding: 1%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 12%;
+  margin-bottom: 25%;
+  overflow: auto;
+  background-color: var(--cardBackgroundcolour);
+  border-radius: 20px;
+  border: 1px solid transparent;
+}
+.gameOverWindowContent {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  padding: 5%;
+  font-size: 145%;
+  /* margin: 2% auto; */
+  /* width: 80%; */
+}
+.gameOverWindow:hover {
+  border-color: grey;
+}
+
+
+  /* Responsive columns - one column layout (vertical) on small screens */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+
+  /* Alarm Animation für MAX speed */
+  .alarm {
+    /* Schriftart */
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 300%;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+    border-radius: 12px;
+    margin-top: 10px;
+    padding: 5px;
+    text-align: center;
+    background-color: red;
+    animation: blink 3s infinite; /* Animation */
+    margin-top: 15px;
+  }
+  
+  @keyframes blink {
+    0%, 10%, 90%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  /* Emergency Button */
+
+  .emergencyContainer {
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .emergencyContainer2 {
+    font-size: larger;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1%;
+    padding-top: 25%;
+  }
+  .emergencyButton {
+    z-index: 3;
+    cursor: pointer;
+    position: relative;
+    padding: 10px 24px;
+    font-size: 18px;
+    color: rgb(253, 18, 18);
+    border: 2px solid rgb(253, 18, 18);
+    border-radius: 34px;
+    background-color: transparent;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+  }
+  
+  .emergencyButton::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: rgb(253, 18, 18);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .emergencyButton:hover::before {
+    scale: 3;
+  }
+  
+  .emergencyButton:hover {
+    color: #212121;
+    scale: 1.1;
+    box-shadow: 0 0px 20px rgb(253, 18, 18, 0.4);
+  }
+  
+  .emergencyButton:active {
+    scale: 1;
+  }
+  
+  
+  
+  
